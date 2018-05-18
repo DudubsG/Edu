@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "552172823323",
+    "firebase_url": "https://education-76eb7.firebaseio.com",
+    "project_id": "education-76eb7",
+    "storage_bucket": "education-76eb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552172823323:android:142fe4f4153a569d",
+        "android_client_info": {
+          "package_name": "com.edu.edu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552172823323-2enfomrfocr0k2cgbpfphjoffu6eek9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWDNR4-pFrmwEghb6_RtwP1z2mYHRNITo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

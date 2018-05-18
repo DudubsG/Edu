@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Edu</string>
+    <string-array name="cursos">
+        <item>Administração</item>
+        <item>Engenharia</item>
+        <item>Medicina</item>
+        <item>Farmácia</item>
+        <item>Direito</item>
+        <item>Publicidade</item>
+        <item>Arquitetura</item>
+        <item>Física</item>
+        <item>Economia</item>
+        <item>Matemática</item>
+        <item>Design</item>
+        <item>Psicologia</item>
+        <item>Fisioterapia</item>
+        <item>FAE</item>
+        <item>USP</item>
+        <item>UP</item>
+        <item>ITA</item>
+    </string-array>
+</resources>
