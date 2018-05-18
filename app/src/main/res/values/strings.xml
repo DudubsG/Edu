@@ -1,22 +1,19 @@
 <resources>
     <string name="app_name">Edu</string>
     <string-array name="cursos">
-        <item>Administração</item>
-        <item>Engenharia</item>
-        <item>Medicina</item>
-        <item>Farmácia</item>
-        <item>Direito</item>
-        <item>Publicidade</item>
-        <item>Arquitetura</item>
-        <item>Física</item>
-        <item>Economia</item>
-        <item>Matemática</item>
-        <item>Design</item>
-        <item>Psicologia</item>
-        <item>Fisioterapia</item>
         <item>FAE</item>
+        <item>FAESP</item>
         <item>USP</item>
         <item>UP</item>
         <item>ITA</item>
+        <item>UTFPR</item>
+        <item>UFPR</item>
+        <item>FGV</item>
+        <item>UERJ</item>
+        <item>UERG</item>
+        <item>UFSC</item>
+        <item>UERG</item>
+        <item>UEM</item>
+        <item>UEPG</item>
     </string-array>
 </resources>
