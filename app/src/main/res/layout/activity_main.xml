@@ -8,43 +8,120 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="26dp">
+
         <HorizontalScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="-15dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/direito"/>
+                    android:background="@android:color/transparent"
+                    android:onClick="buscar"
+                    android:scaleX=".9"
+                    android:scaleY=".9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/direito" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/medicina"/>
+                    android:background="@android:color/transparent"
+                    android:onClick="buscar"
+                    android:scaleX=".9"
+                    android:scaleY=".9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/medicina" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/engenharia"/>
+                    android:background="@android:color/transparent"
+                    android:onClick="buscar"
+                    android:scaleX=".9"
+                    android:scaleY=".9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/engenharia" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/administracao"/>
+                    android:background="@android:color/transparent"
+                    android:onClick="buscar"
+                    android:scaleX=".9"
+                    android:scaleY=".9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/administracao" />
+
+                <ImageButton
+                    android:id="@+id/botaoPesquisar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="buscar"
+                    android:scaleX=".9"
+                    android:scaleY=".9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/administracao" />
+
+                <ImageButton
+                    android:id="@+id/botaoPesquisar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="buscar"
+                    android:scaleX=".9"
+                    android:scaleY=".9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/administracao" />
             </LinearLayout>
         </HorizontalScrollView>
 
         <ListView
             android:id="@+id/barraPesquisa"
-            android:layout_marginTop="100dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp" />
+
+        <EditText
+            android:id="@+id/pesquisar"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Busca..."
+            android:inputType="textPersonName"/>
+
+        <ImageButton
+            android:id="@+id/botaoPesquisar"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:scaleX=".7"
+            android:scaleY=".7"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="-20dp"
+            android:background="@android:color/transparent"
+            android:onClick="buscar"
+            app:srcCompat="@mipmap/ic_launcher_foreground" />
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

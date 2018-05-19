@@ -1,29 +1,42 @@
 package com.edu.edu;
 
+import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView barraPesquisa;
+    ListView lista;
 
     ArrayAdapter<String> adapter;
+
+    private ImageButton botao;
+
+    private EditText barraPesquisa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        barraPesquisa = (ListView) findViewById(R.id.barraPesquisa);
+        lista = (ListView) findViewById(R.id.barraPesquisa);
 
         ArrayList<String> arrayBarra = new ArrayList<>();
 
@@ -36,36 +49,30 @@ public class MainActivity extends AppCompatActivity {
             arrayBarra
         );
 
-        barraPesquisa.setAdapter(adapter);
-    }
+        lista.setAdapter(adapter);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+        botao = (ImageButton) findViewById(R.id.botaoPesquisar);
 
-        MenuInflater inflater = getMenuInflater();
+        barraPesquisa = (EditText) findViewById(R.id.pesquisar);
 
-        inflater.inflate(R.menu.pesquisa_menu, menu);
-
-        MenuItem item = menu.findItem(R.id.procurarCursos);
-
-        SearchView searchView = (SearchView)item.getActionView();
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        barraPesquisa.setOnEditorActionListener(new EditText.OnEditorActionListener() {
             @Override
-            public boolean onQueryTextSubmit(String s) {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    botao.performClick();
 
-                adapter.getFilter().filter(s);
-
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-
+                    return true;
+                }
                 return false;
             }
         });
+    }
 
-        return super.onCreateOptionsMenu(menu);
+    public void buscar(View view){
+
+        adapter.getFilter().filter(barraPesquisa.getText().toString());
+
+        InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        im.hideSoftInputFromWindow(barraPesquisa.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 }
