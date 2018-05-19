@@ -24,7 +24,6 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@android:color/transparent"
@@ -35,7 +34,6 @@
                     app:srcCompat="@drawable/direito" />
 
                 <ImageButton
-                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@android:color/transparent"
@@ -46,7 +44,6 @@
                     app:srcCompat="@drawable/medicina" />
 
                 <ImageButton
-                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@android:color/transparent"
@@ -57,7 +54,6 @@
                     app:srcCompat="@drawable/engenharia" />
 
                 <ImageButton
-                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@android:color/transparent"
@@ -68,7 +64,6 @@
                     app:srcCompat="@drawable/administracao" />
 
                 <ImageButton
-                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@android:color/transparent"
@@ -79,7 +74,6 @@
                     app:srcCompat="@drawable/administracao" />
 
                 <ImageButton
-                    android:id="@+id/botaoPesquisar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@android:color/transparent"
