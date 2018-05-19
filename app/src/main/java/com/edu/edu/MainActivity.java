@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
                     return true;
                 }
+
                 return false;
             }
         });
@@ -74,5 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
         InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         im.hideSoftInputFromWindow(barraPesquisa.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+        getWindow().getDecorView().clearFocus();
     }
 }
