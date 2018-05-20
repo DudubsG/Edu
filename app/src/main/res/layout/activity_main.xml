@@ -95,10 +95,12 @@
             android:id="@+id/pesquisar"
             android:layout_width="290dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:hint="Busca..."
-            android:inputType="textPersonName"/>
+            android:background="@drawable/borda_arredondada_pesquisa"
+            android:hint="Buscar..."
+            android:inputType="textPersonName"
+            android:padding="10dp" />
 
         <ImageButton
             android:id="@+id/botaoPesquisar"
