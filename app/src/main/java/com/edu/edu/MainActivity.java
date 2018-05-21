@@ -26,33 +26,64 @@ public class MainActivity extends AppCompatActivity {
 
     ListView lista;
 
+    ListView listaFoto;
+
+    String[] nome;
+
+    String[] descricao;
+
+    int[] imgid;
+
     ArrayAdapter<String> adapter;
+
+    CustomListView customListView;
 
     private ImageButton botao;
 
     private EditText barraPesquisa;
+
+    ArrayList<Model> arrayList = new ArrayList<Model>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lista = (ListView) findViewById(R.id.barraPesquisa);
+        botao = (ImageButton) findViewById(R.id.botaoPesquisar);
 
-        ArrayList<String> arrayBarra = new ArrayList<>();
+        listaFoto = (ListView) findViewById(R.id.listView);
 
-        arrayBarra.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos)));
+        nome = new String[]{"FAE", "FAESP", "USP", "UP", "ITA", "UTFPR", "UFPR", "FGV", "UERJ", "UFRGS", "UFSC", "UEM", "UEPG"};
+
+        descricao  = new String[]{"Faculdade de Administração e Economia", "Faculdade Anchieta de Ensino Superior do Paraná", "Universidade de São Paulo", "Universidade Positivo", "Instituto Tecnológico de Aeronáutica ", "Universidade Tecnológica Federal do Paraná", "Universidade Federal do Paraná", "Fundação Getúlio Vargas", "Universidade do Estado do Rio de Janeiro", "Universidade Federal do Rio Grande do Sul", "Universidade Federal de Santa Catarina", "Universidade Estadual de Maringá", "Universidade Estadual de Ponta Grossa"};
+
+        imgid = new int[]{R.drawable.fae, R.drawable.faesp, R.drawable.usp, R.drawable.up, R.drawable.fae, R.drawable.utfpr, R.drawable.ufpr, R.drawable.fae, R.drawable.fae, R.drawable.fae, R.drawable.fae, R.drawable.fae, R.drawable.fae};
+
+        for(int i = 0; i < nome.length; i++){
+
+            Model model = new Model(nome[i], descricao[i], imgid[i]);
+
+            arrayList.add(model);
+        }
+
+        customListView = new CustomListView(this, arrayList);
+
+        listaFoto.setAdapter(customListView);
+
+        /*lista = (ListView) findViewById(R.id.listView);
+
+        ArrayList<String> arrayLista = new ArrayList<>();
+
+        arrayLista.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos)));
 
         adapter = new ArrayAdapter<String>(
 
             MainActivity.this,
             android.R.layout.simple_list_item_1,
-            arrayBarra
+            arrayLista
         );
 
-        lista.setAdapter(adapter);
-
-        botao = (ImageButton) findViewById(R.id.botaoPesquisar);
+        lista.setAdapter(adapter);*/
 
         barraPesquisa = (EditText) findViewById(R.id.pesquisar);
 
@@ -72,7 +103,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void buscar(View view){
 
-        adapter.getFilter().filter(barraPesquisa.getText().toString());
+        //adapter.getFilter().filter(barraPesquisa.getText().toString());
+
+        customListView.filter(barraPesquisa.getText().toString());
 
         InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         im.hideSoftInputFromWindow(barraPesquisa.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
