@@ -37,12 +37,6 @@ public class CustomListView extends BaseAdapter{
         this.arrayList = new ArrayList<Model>();
 
         this.arrayList.addAll(modelList);
-
-        /*this.nome = nome;
-
-        this.descricao = descricao;
-
-        this.imgid = imgid;*/
     }
 
     class ViewHolder{
@@ -87,21 +81,11 @@ public class CustomListView extends BaseAdapter{
             holder.iv = view.findViewById(R.id.imageView);
 
             view.setTag(holder);
-
-            /*LayoutInflater layoutInflater = context.getLayoutInflater();
-
-            r = layoutInflater.inflate(R.layout.list_view, null, true);
-
-            viewHolder = new ViewHolder(r);
-
-            r.setTag(viewHolder);*/
         }
 
         else{
 
             holder = (ViewHolder) view.getTag();
-
-            //viewHolder = (ViewHolder) r.getTag();
         }
 
         holder.tv1.setText(modelList.get(position).getTitulo());
@@ -109,10 +93,6 @@ public class CustomListView extends BaseAdapter{
         holder.tv2.setText(modelList.get(position).getDsc());
 
         holder.iv.setImageResource(modelList.get(position).getImg());
-
-        /*viewHolder.tv2.setText(descricao[position]);
-
-        viewHolder.iv.setImageResource(imgid[position]);*/
 
         return view;
     }

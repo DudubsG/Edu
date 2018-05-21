@@ -15,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         descricao  = new String[]{"Faculdade de Administração e Economia", "Faculdade Anchieta de Ensino Superior do Paraná", "Universidade de São Paulo", "Universidade Positivo", "Instituto Tecnológico de Aeronáutica ", "Universidade Tecnológica Federal do Paraná", "Universidade Federal do Paraná", "Fundação Getúlio Vargas", "Universidade do Estado do Rio de Janeiro", "Universidade Federal do Rio Grande do Sul", "Universidade Federal de Santa Catarina", "Universidade Estadual de Maringá", "Universidade Estadual de Ponta Grossa"};
 
-        imgid = new int[]{R.drawable.fae, R.drawable.faesp, R.drawable.usp, R.drawable.up, R.drawable.fae, R.drawable.utfpr, R.drawable.ufpr, R.drawable.fae, R.drawable.fae, R.drawable.fae, R.drawable.fae, R.drawable.fae, R.drawable.fae};
+        imgid = new int[]{R.drawable.fae, R.drawable.faesp, R.drawable.usp, R.drawable.up, R.drawable.ita, R.drawable.utfpr, R.drawable.ufpr, R.drawable.fgv, R.drawable.uerj, R.drawable.ufrgs, R.drawable.ufsc, R.drawable.uem, R.drawable.uepg};
 
         for(int i = 0; i < nome.length; i++){
 
@@ -69,21 +70,6 @@ public class MainActivity extends AppCompatActivity {
         customListView = new CustomListView(this, arrayList);
 
         listaFoto.setAdapter(customListView);
-
-        /*lista = (ListView) findViewById(R.id.listView);
-
-        ArrayList<String> arrayLista = new ArrayList<>();
-
-        arrayLista.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos)));
-
-        adapter = new ArrayAdapter<String>(
-
-            MainActivity.this,
-            android.R.layout.simple_list_item_1,
-            arrayLista
-        );
-
-        lista.setAdapter(adapter);*/
 
         barraPesquisa = (EditText) findViewById(R.id.pesquisar);
 
@@ -102,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buscar(View view){
-
-        //adapter.getFilter().filter(barraPesquisa.getText().toString());
 
         customListView.filter(barraPesquisa.getText().toString());
 
