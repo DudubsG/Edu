@@ -5,15 +5,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.CardView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="60dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/imageHorizontal"/>
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:id="@+id/imageHorizontal"
+            android:onClick="buscar"/>
 
     </android.support.v7.widget.CardView>
 

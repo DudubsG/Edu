@@ -115,6 +115,13 @@ public class CustomListView extends BaseAdapter{
                 if(model.getTitulo().toLowerCase(Locale.getDefault()).startsWith(charText)){
 
                     modelList.add(model);
+
+                    //MainActivity.resultado = true;
+                }
+
+                else{
+
+                    //MainActivity.resultado = false;
                 }
             }
         }

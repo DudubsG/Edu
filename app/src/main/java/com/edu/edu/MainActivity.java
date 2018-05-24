@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         barraPesquisa.setOnEditorActionListener(new EditText.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     botao.performClick();
 

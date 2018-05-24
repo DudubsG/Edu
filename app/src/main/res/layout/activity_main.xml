@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E6E6E6"
     tools:context=".MainActivity">
     
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="60dp"
         android:id="@+id/recycler"
         android:orientation="horizontal">
 
@@ -16,9 +19,7 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="26dp">
+        android:layout_height="fill_parent">
 
         <ListView
             android:id="@+id/listView"
@@ -35,7 +36,7 @@
             android:background="@drawable/borda_arredondada_pesquisa"
             android:hint="Buscar..."
             android:inputType="textPersonName"
-            android:padding="10dp" />
+            android:padding="6dp" />
 
         <ImageButton
             android:id="@+id/botaoPesquisar"
@@ -44,7 +45,7 @@
             android:scaleX=".7"
             android:scaleY=".7"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="2dp"
             android:layout_marginRight="-20dp"
             android:background="@android:color/transparent"
             android:onClick="buscar"
