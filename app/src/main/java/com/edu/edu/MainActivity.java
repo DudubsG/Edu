@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerViewAdapter recyclerViewAdapter;
 
-    private ImageButton botao;
+    ImageButton botao;
 
-    private EditText barraPesquisa;
+    EditText barraPesquisa;
 
     ArrayList<Model> arrayList = new ArrayList<Model>();
 
@@ -66,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        botao = (ImageButton) findViewById(R.id.botaoPesquisar);
 
         listaFoto = (ListView) findViewById(R.id.listView);
 
@@ -85,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
             arrayList.add(model);
         }
+
+        botao = (ImageButton) findViewById(R.id.imageHorizontal);
 
         customListView = new CustomListView(this, arrayList);
 
@@ -112,7 +112,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    botao.performClick();
+
+                    buscar1();
 
                     return true;
                 }
@@ -120,6 +121,16 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void buscar1(){
+
+        customListView.filter(barraPesquisa.getText().toString());
+
+        InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        im.hideSoftInputFromWindow(barraPesquisa.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+        getWindow().getDecorView().clearFocus();
     }
 
     public void buscar(View view){
