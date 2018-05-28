@@ -1,13 +1,9 @@
 package com.edu.edu;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.ColorSpace;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,13 +14,13 @@ import java.util.Locale;
 
 public class CustomListView extends BaseAdapter{
 
-    Context context;
+    private Context context;
 
-    LayoutInflater inflater;
+    private LayoutInflater inflater;
 
-    List<Model> modelList;
+    private List<Model> modelList;
 
-    ArrayList<Model> arrayList;
+    private ArrayList<Model> arrayList;
 
     public static boolean resultado;
 
@@ -36,7 +32,7 @@ public class CustomListView extends BaseAdapter{
 
         inflater = LayoutInflater.from(context);
 
-        this.arrayList = new ArrayList<Model>();
+        this.arrayList = new ArrayList<>();
 
         this.arrayList.addAll(modelList);
     }

@@ -1,40 +1,25 @@
 package com.edu.edu;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
-
     private List<Integer> fotos = new ArrayList<>();
-
-    ListView lista;
 
     ListView listaFoto;
 
@@ -48,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
     int[] imagensCursos;
 
-    ArrayAdapter<String> adapter;
-
     CustomListView customListView;
 
     RecyclerView recyclerView;
@@ -60,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText barraPesquisa;
 
-    ArrayList<Model> arrayList = new ArrayList<Model>();
+    ArrayList<Model> arrayList = new ArrayList<>();
 
     LinearLayoutManager manager;
 
@@ -69,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listaFoto = (ListView) findViewById(R.id.listView);
+        listaFoto = findViewById(R.id.listView);
 
-        textoResultado = (TextView) findViewById(R.id.tvResultado);
+        textoResultado = findViewById(R.id.tvResultado);
 
         nome = new String[]{"FAE", "FAESP", "USP", "UP", "ITA", "UTFPR", "UFPR", "FGV", "UERJ", "UFRGS", "UFSC", "UEM", "UEPG"};
 
@@ -88,20 +71,20 @@ public class MainActivity extends AppCompatActivity {
             arrayList.add(model);
         }
 
-        botao = (ImageButton) findViewById(R.id.imageHorizontal);
+        botao = findViewById(R.id.imageHorizontal);
 
         customListView = new CustomListView(this, arrayList);
 
         listaFoto.setAdapter(customListView);
 
-        barraPesquisa = (EditText) findViewById(R.id.pesquisar);
+        barraPesquisa = findViewById(R.id.pesquisar);
 
-        for(int i = 0; i < imagensCursos.length; i++){
+        for(int i : imagensCursos){
 
-            fotos.add(imagensCursos[i]);
+            fotos.add(i);
         }
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        recyclerView = findViewById(R.id.recycler);
 
         manager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
@@ -137,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().getDecorView().clearFocus();
 
-        if(CustomListView.resultado == false){
+        if(!CustomListView.resultado){
 
             textoResultado.setVisibility(View.VISIBLE);
         }
@@ -160,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().getDecorView().clearFocus();
 
-        if(CustomListView.resultado == false){
+        if(!CustomListView.resultado){
 
             textoResultado.setVisibility(View.VISIBLE);
         }
