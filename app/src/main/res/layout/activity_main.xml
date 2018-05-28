@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#A4A4A4">
+    android:background="#2E2E2E">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,6 +37,7 @@
             android:layout_margin="5dp"
             android:textColorHint="#848484"
             android:textColor="#151515"
+            android:drawableLeft="@mipmap/lupa"
             android:background="@drawable/borda_arredondada_pesquisa"
             android:hint="Buscar..."
             android:inputType="textPersonName"
@@ -53,6 +54,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="142dp"
+            android:layout_below="@id/recycler"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Resultado não encontrado"
+            android:textColor="#D8D8D8"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_marginTop="180dp"
             android:layout_below="@id/recycler"/>
 
     </RelativeLayout>

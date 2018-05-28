@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listaFoto;
 
+    TextView textoResultado;
+
     String[] nome;
 
     String[] descricao;
@@ -68,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listaFoto = (ListView) findViewById(R.id.listView);
+
+        textoResultado = (TextView) findViewById(R.id.tvResultado);
 
         nome = new String[]{"FAE", "FAESP", "USP", "UP", "ITA", "UTFPR", "UFPR", "FGV", "UERJ", "UFRGS", "UFSC", "UEM", "UEPG"};
 
@@ -128,9 +132,22 @@ public class MainActivity extends AppCompatActivity {
         customListView.filter(barraPesquisa.getText().toString());
 
         InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
         im.hideSoftInputFromWindow(barraPesquisa.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
         getWindow().getDecorView().clearFocus();
+
+        if(CustomListView.resultado == false){
+
+            textoResultado.setVisibility(View.VISIBLE);
+        }
+
+        else{
+
+            textoResultado.setVisibility(View.INVISIBLE);
+
+            CustomListView.resultado = false;
+        }
     }
 
     public void buscar(View view){
@@ -138,8 +155,21 @@ public class MainActivity extends AppCompatActivity {
         customListView.filter(barraPesquisa.getText().toString());
 
         InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
         im.hideSoftInputFromWindow(barraPesquisa.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
         getWindow().getDecorView().clearFocus();
+
+        if(CustomListView.resultado == false){
+
+            textoResultado.setVisibility(View.VISIBLE);
+        }
+
+        else{
+
+            textoResultado.setVisibility(View.INVISIBLE);
+
+            CustomListView.resultado = false;
+        }
     }
 }

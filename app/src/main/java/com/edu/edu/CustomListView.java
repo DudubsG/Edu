@@ -26,6 +26,8 @@ public class CustomListView extends BaseAdapter{
 
     ArrayList<Model> arrayList;
 
+    public static boolean resultado;
+
     public CustomListView(Context context, List<Model> modelList){
 
         this.context = context;
@@ -106,6 +108,8 @@ public class CustomListView extends BaseAdapter{
         if(charText.length() == 0){
 
             modelList.addAll(arrayList);
+
+            resultado = true;
         }
 
         else{
@@ -116,12 +120,7 @@ public class CustomListView extends BaseAdapter{
 
                     modelList.add(model);
 
-                    //MainActivity.resultado = true;
-                }
-
-                else{
-
-                    //MainActivity.resultado = false;
+                    resultado = true;
                 }
             }
         }
