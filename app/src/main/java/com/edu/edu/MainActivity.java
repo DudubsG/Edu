@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         imgid = new int[]{R.drawable.fae, R.drawable.faesp, R.drawable.usp, R.drawable.up, R.drawable.ita, R.drawable.utfpr, R.drawable.ufpr, R.drawable.fgv, R.drawable.uerj, R.drawable.ufrgs, R.drawable.ufsc, R.drawable.uem, R.drawable.uepg};
 
-        imagensCursos = new int[]{R.drawable.administracao, R.drawable.direito, R.drawable.medicina, R.drawable.engenharia, R.drawable.psicologia};
+        imagensCursos = new int[]{R.drawable.administracao, R.drawable.direito, R.drawable.medicina, R.drawable.engenharia, R.drawable.psicologia, R.drawable.veterinaria, R.drawable.pedagogia};
 
         for(int i = 0; i < nome.length; i++){
 
